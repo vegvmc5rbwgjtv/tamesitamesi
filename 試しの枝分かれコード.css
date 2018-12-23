@@ -1,0 +1,163 @@
+/* スマホ版にした時の表示の仕方 */
+
+h2 {
+  text-align:center;
+  color:green;
+  line-height:10px; /* 行間を調整するコード*/
+}
+.gnav { /* リストを表示する青グレーの帯のスタイル */
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  background: #9fb7d4;
+}
+.gnav .nav { /* リストを表示する青グレーの帯のスタイル */
+  width: 300px;
+  height: 40px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+}
+.gnav .nav li {
+  position: relative;
+  list-style: none;
+  box-sizing: border-box;/* 要素の幅と高さの中にpaddingとborderを含めるかどうか */
+  /* box-sizing: content-box; ←初期値 paddingとborderを幅と高さに含めないのではみ出る */
+  /* box-sizing: border-box; ← paddingとborderを幅と高さに含めるので要素の中で収まる */
+  /* box-sizing: inherit; ← 親要素のborder-boxの値を引き継ぐ*/
+  border-left: 1px solid #eee;  /* リスト同士の境目の線のスタイル */
+}
+.gnav .nav li a {
+  display: block;
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  line-height: 3.2;/* 行間を調整するコード*/
+  background: #9fb7d4;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.gnav .nav li:first-child {
+  border-left: 1px solid #eee;
+}
+.gnav .nav li:last-child {
+  border-right: 1px solid #eee;
+}
+.gnav .nav > li:hover > a {/*layer-1*/
+  color: orange;/*1番目のリストにホバーした時文字がオレンジ色に*/
+  background: #afc6e2;
+}
+.gnav .nav > li li:hover > a {/*layer-2*/
+  color: olive;/*2番目のリストにホバーした時文字がオリーブ色に*/
+  background: #afc6e2;
+}
+.gnav .nav li ul {
+  top: 40px;
+  left: -40px;
+  position: absolute;
+}
+.gnav .nav li ul li {
+  overflow: hidden;  /* overflow: hidden; ボックスに収まりきらない部分は非表示になりスクロールも出来ない */
+  height: 0;
+}
+.gnav .nav li ul li a {
+  border-top: 1px solid #eee;
+}
+.gnav .nav li:hover > ul > li { /* .gnav .navのリストにポインタが乗ると隠れてたのが表示される */
+  overflow: visible;  /* overflow:visibleだと基本的にはみ出た部分がそのまま表示 */
+  height: 40px;
+}
+  .gnav .nav li ul li ul {
+    top: 0;
+    left: 20px;
+  }
+  .gnav .nav li ul li ul:before {/*layer-2▷*/
+    position: absolute;
+    content: "";
+    top: 15px;
+    left: 30px;
+    border: 5px solid transparent;
+    border-left: 5px solid #fff;
+  }
+  .gnav .nav li ul li ul li:hover > a {/*layer-3*/
+    color: pink;
+    background: #afc6e2;
+  }
+  .gnav .nav li ul li ul.left {
+    top: 0;
+    left: -100px;
+  }
+  .gnav .nav li ul li ul.left:before,/*layer-2-left▷*/
+  .gnav .nav li ul li ul li ul.left:before {/*layer-3-left▷*/
+    position: absolute;
+    content: "";
+    top: 15px;
+    left: 100px;
+    border: 5px solid transparent;
+    border-right: 5px solid #fff;
+  }
+  .gnav .nav li ul li ul.left li:hover > a {/*layer-2-left*/
+    color: pink;
+    background: #afc6e2;
+  }
+  .gnav .nav li ul li ul li ul.left li:hover > a {/*layer-3-left*/
+    color: purple;
+    background: #afc6e2;
+  }
+.content {
+  width: 100%;
+  min-height: 200px;
+  background: #eee;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+
+/* PC向けレイアウト */
+@media (min-width: 769px) {/* 画面サイズが、769pxより大きかったらの話 */
+.gnav {
+  overflow: visible;  /* overflow:visibleだと基本的にはみ出た部分がそのまま表示 */
+}
+.gnav .nav {
+  width: 755px;/* もとは755px これを800にするとメニューが左にズレる*/
+}
+.gnav .nav li {
+  box-sizing: border-box;
+}
+.gnav .nav li a {
+  display: block;
+  width: 150px;
+  height: 40px;
+  font-size: 14px;
+  line-height: 2.8;
+}
+.gnav .nav li:first-child {
+  border-left: 1px solid #eee;
+}
+.gnav .nav li:last-child {
+  border-right: 1px solid #eee;
+}
+  .gnav .nav li ul li ul {
+    top: 0;
+    left: 110px;
+  }
+  .gnav .nav li ul li ul:before {/*layer-2▷*/
+    left: 30px;
+  }
+  .gnav .nav li ul li ul.left {
+    left: -190px;
+  }
+  .gnav .nav li ul li ul.left:before,/*layer-2-left▷*/
+  .gnav .nav li ul li ul li ul.left:before {/*layer-3-left▷*/
+    left: 190px;
+  }
+.content {
+  width: 755px;
+}
+}
+/* ** */}
