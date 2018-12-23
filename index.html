@@ -1,0 +1,121 @@
+<!--参考  https://www.webdlab.com/labs/dropdownmenu-5/#s1  -->
+<!--  -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>試しの枝分かれコード</title>
+    <link rel="stylesheet" href="試しの枝分かれコード.css">
+    <!-- Font Awesomeも↓のリンクで使えるようにしてある -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  </head>
+  
+<h2>※これが自然な気がする</h2>
+<!--  -->
+<!DOCTYPE html>
+<html>
+<!-- ここからが参考本番  -->
+<div class="gnav">
+  <ul class="nav">
+      <li><a href="#">Home</a>
+      </li>
+
+      <!-- 枝分かれコード a1 -->
+      <li><a href="#">a1</a>
+        <ul>
+          <li><a href="#">b1上</a></li><!-- 下へ無数にリストを連ねたかったら、<li></li>を繰り返せば良い -->
+          <li><a href="#">b1下</a><!-- b1下にホバーするとCSSにて右にb2のリストが出る仕組み -->
+            <ul>
+              <li><a href="#">b2上</a></li>
+              <li><a href="#">b2下</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <!-- 枝分かれコード a2 -->
+    <li><a href="#">a2</a>
+      <ul>
+        <li><a href="#">c1上</a>
+          <ul>
+            <li><a href="#">c2上</a></li>
+            <li><a href="#">c2下</a></li>
+          </ul>
+        </li>
+        <li><a href="#">c1下</a></li>
+      </ul>
+    </li>
+
+      <!-- 枝分かれコード a3 -->
+    <li><a href="#">a3</a>
+      <ul>
+        <li><a href="#">d1上</a></li>
+        <li><a href="#">d1下</a>
+          <ul>
+            <li><a href="#">d2上</a></li>
+            <li><a href="#">d2下</a>
+              <ul class="left">
+                <li><a href="#">d3上</a></li>
+                <li><a href="#">d3下</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li><!-- a href="#">アクセスの閉じ括弧 -->
+
+      <!-- 枝分かれコード a4 -->
+    <li><a href="#">a4</a>
+      <ul>
+        <li><a href="#">e1上</a>
+          <ul class="left">
+            <li><a href="#">e2上-上</a></li>
+            <li><a href="#">e2上-下</a></li>
+          </ul>
+        </li>
+        <li><a href="#">e1下</a>
+          <ul class="left">
+            <li><a href="#">e2下-2上</a></li>
+            <li><a href="#">e2下-2下</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li><!-- a href="#">ブログの閉じ括弧 -->
+  </ul><!--ul class="nav"の閉じ括弧-->
+</div><!--div class="gnav"の閉じ括弧-->
+
+
+<div class="content">
+ <p>試しの入力１</p>
+ <p>試しの入力２</p>
+ <p>試しの入力３</p>
+</div>
+
+    <div class="main">
+       <div class="title-img"><!-- ドヤ顔イメージ -->
+        <img src="テトリス　寝る.png" alt="寝る">
+       </div>
+    </div>  
+
+
+<style type="text/css">/* テトリス　寝るイメージのCSS */  
+ .main {/* イメージの背景を黒に */
+   background-color: black;
+   margin-top:30px;
+ }
+
+ .title-img { /* イメージの中央揃え…これが無いと、画像が黒い背景よりも大きくなる */
+   text-align: center;
+ }
+
+ img {  /* イメージの伸縮 */
+   width: 40vw;/* このコードのおかげで、画面のサイズに合わせて画像が伸縮する */
+   margin-top:2px;/* イメージの上の黒い隙間の幅 */
+   padding:7px;
+ }
+</style>
+
+
+
+</html> 
